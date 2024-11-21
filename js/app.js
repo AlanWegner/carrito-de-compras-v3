@@ -4,7 +4,7 @@ const footer = document.querySelector('#footer');
 const templateFooter = document.querySelector('#templateFooter');
 const fragment = document.createDocumentFragment();
 
-const carritoArray = [];
+let carritoArray = [];
 
 const agregarCarrito = (e) => {
     const producto = {
@@ -45,8 +45,14 @@ const mostrarCarrito = () => {
 };
 
 const btnAgregar = (e) => {
-    console.log('me diste click')
-}
+    carritoArray = carritoArray.map((item) => {
+        if (e.target.dataset.id === item.id) {
+            item.cantidad++;
+        }
+        return item;
+    });
+    mostrarCarrito();
+};
 
 document.addEventListener('click', (e) => {
     if (e.target.matches('.btn-primary')) {
@@ -54,6 +60,6 @@ document.addEventListener('click', (e) => {
     };
 
     if (e.target.matches('.list-group-item div .btn-success')) {
-        btnAgregar(e)
+        btnAgregar(e);
     };
 });
