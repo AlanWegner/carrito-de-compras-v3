@@ -46,7 +46,17 @@ const mostrarCarrito = () => {
 };
 
 const mostrarFooter = () => {
-    console.log('mostrar footer');
+
+    footer.textContent = '';
+
+    const total = carritoArray.reduce((acc, current) => {
+        return acc + current.cantidad * current.precio;
+    }, 0);
+    
+    const clone = templateFooter.content.cloneNode(true);
+    clone.querySelector('.lead span').textContent = total;
+
+    footer.appendChild(clone);
 };
 
 const btnAgregar = (e) => {
