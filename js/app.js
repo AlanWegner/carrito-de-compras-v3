@@ -2,6 +2,7 @@ const carrito = document.querySelector('#carrito');
 const template = document.querySelector('#template');
 const footer = document.querySelector('#footer');
 const templateFooter = document.querySelector('#templateFooter');
+const fragment = document.createDocumentFragment();
 
 const carritoArray = [];
 
@@ -25,7 +26,11 @@ const agregarCarrito = (e) => {
 
 const mostrarCarrito = () => {
     carritoArray.forEach ((item) => {
-        console.log(item);
+        const clone = template.content.cloneNode(true);
+
+        clone.querySelector('.list-group-item .lead').textContent = item.titulo;
+        clone.querySelector('.badge').textContent = item.cantidad;
+        clone.querySelector('.lead span').textContent = item.precio * item.cantidad;
     });
 };
 
