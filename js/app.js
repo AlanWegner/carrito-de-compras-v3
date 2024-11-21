@@ -4,7 +4,12 @@ const footer = document.querySelector('#footer');
 const templateFooter = document.querySelector('#templateFooter');
 
 const agregarCarrito = (e) => {
-    console.log(e);
+    const producto = {
+        titulo: e.target.dataset.fruta,
+        id: e.target.dataset.fruta,
+        cantidad: 1,
+        precio: e.target.dataset.precio,
+    }
 };
 
 document.addEventListener('click', (e) => {
