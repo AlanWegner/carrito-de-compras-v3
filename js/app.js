@@ -3,6 +3,8 @@ const template = document.querySelector('#template');
 const footer = document.querySelector('#footer');
 const templateFooter = document.querySelector('#templateFooter');
 
+const carritoArray = [];
+
 const agregarCarrito = (e) => {
     const producto = {
         titulo: e.target.dataset.fruta,
