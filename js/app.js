@@ -31,6 +31,8 @@ const mostrarCarrito = () => {
         clone.querySelector('.list-group-item .lead').textContent = item.titulo;
         clone.querySelector('.badge').textContent = item.cantidad;
         clone.querySelector('.lead span').textContent = item.precio * item.cantidad;
+
+        fragment.appendChild(clone);
     });
 };
 
