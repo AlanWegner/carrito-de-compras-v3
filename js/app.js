@@ -8,8 +8,8 @@ const agregarCarrito = (e) => {
         titulo: e.target.dataset.fruta,
         id: e.target.dataset.fruta,
         cantidad: 1,
-        precio: e.target.dataset.precio,
-    }
+        precio: parseInt(e.target.dataset.precio),
+    };
 };
 
 document.addEventListener('click', (e) => {
