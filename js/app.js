@@ -44,8 +44,16 @@ const mostrarCarrito = () => {
     carrito.appendChild(fragment);
 };
 
+const btnAgregar = (e) => {
+    console.log('me diste click')
+}
+
 document.addEventListener('click', (e) => {
     if (e.target.matches('.btn-primary')) {
         agregarCarrito(e);
+    };
+
+    if (e.target.matches('.list-group-item div .btn-success')) {
+        btnAgregar(e)
     };
 });
