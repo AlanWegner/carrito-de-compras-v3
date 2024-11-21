@@ -42,6 +42,11 @@ const mostrarCarrito = () => {
     });
 
     carrito.appendChild(fragment);
+    mostrarFooter();
+};
+
+const mostrarFooter = () => {
+    console.log('mostrar footer');
 };
 
 const btnAgregar = (e) => {
