@@ -60,6 +60,7 @@ const mostrarFooter = () => {
 };
 
 const btnAgregar = (e) => {
+    
     carritoArray = carritoArray.map((item) => {
         if (e.target.dataset.id === item.id) {
             item.cantidad++;
@@ -70,6 +71,7 @@ const btnAgregar = (e) => {
 };
 
 const btnDisminuir = (e) => {
+
     carritoArray = carritoArray.filter((item) => {
         if (e.target.dataset.id === item.id) {
             if (item.cantidad > 0) {
