@@ -55,8 +55,19 @@ const btnAgregar = (e) => {
 };
 
 const btnDisminuir = (e) => {
-    console.log('me has borrado');
-}
+    carritoArray = carritoArray.filter((item) => {
+        if (e.target.dataset.id === item.id) {
+            if (item.cantidad > 0) {
+                item.cantidad--;
+                if (item.cantidad === 0) return;
+                return item;
+            }
+        } else {
+            return item;
+        }
+    });
+    mostrarCarrito();
+};
 
 document.addEventListener('click', (e) => {
     if (e.target.matches('.btn-primary')) {
