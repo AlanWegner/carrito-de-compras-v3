@@ -35,6 +35,9 @@ const mostrarCarrito = () => {
         clone.querySelector('.badge').textContent = item.cantidad;
         clone.querySelector('.lead span').textContent = item.precio * item.cantidad;
 
+        clone.querySelector('.btn-success').dataset.id = item.id;
+        clone.querySelector('.btn-danger').dataset.id = item.id;
+
         fragment.appendChild(clone);
     });
 
