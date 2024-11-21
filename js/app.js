@@ -54,6 +54,10 @@ const btnAgregar = (e) => {
     mostrarCarrito();
 };
 
+const btnDisminuir = (e) => {
+    console.log('me has borrado');
+}
+
 document.addEventListener('click', (e) => {
     if (e.target.matches('.btn-primary')) {
         agregarCarrito(e);
@@ -61,5 +65,8 @@ document.addEventListener('click', (e) => {
 
     if (e.target.matches('.list-group-item div .btn-success')) {
         btnAgregar(e);
+    };
+    if (e.target.matches('.list-group-item div .btn-danger')) {
+        btnDisminuir(e);
     };
 });
