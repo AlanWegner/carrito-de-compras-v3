@@ -34,6 +34,8 @@ const mostrarCarrito = () => {
 
         fragment.appendChild(clone);
     });
+
+    carrito.appendChild(fragment);
 };
 
 document.addEventListener('click', (e) => {
